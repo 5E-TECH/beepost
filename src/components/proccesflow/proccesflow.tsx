@@ -6,6 +6,8 @@ import { Variants } from "framer-motion";
 
 const ProcessFlow = () => {
   const [isDesktop, setIsDesktop] = useState(false);
+  console.log(isDesktop);
+  
 
   useEffect(() => {
     const check = () => setIsDesktop(window.innerWidth >= 1024);
