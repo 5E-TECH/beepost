@@ -1,0 +1,72 @@
+import { memo } from "react";
+
+const partners = [
+  "DHL",
+  "FedEx",
+  "UPS",
+  "USPS",
+  "Amazon",
+  "Alibaba",
+  "AliExpress",
+  "eBay",
+  "Shopify",
+  "Stripe",
+  "PayPal",
+  "Google",
+  "Meta",
+  "Apple",
+  "Microsoft",
+];
+
+const Row = ({
+  direction,
+}: {
+  direction: "left" | "right";
+}) => {
+  return (
+    <div className="relative overflow-hidden">
+      <div
+        className={`flex w-max gap-16 whitespace-nowrap ${
+          direction === "left"
+            ? "animate-marqueeLeft"
+            : "animate-marqueeRight"
+        }`}
+      >
+        {[...partners, ...partners].map((item, i) => (
+          <span
+            key={i}
+            className="text-xl md:text-2xl font-semibold text-black/40 hover:text-black transition"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const PartnersMarquee = () => {
+  return (
+    <section className="bg-[#FBF8F3] py-24 md:py-1 space-y-10">
+      <div className="text-center mb-14">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#1E0E2F]">
+          Yetkazib berish bo‘yicha hamkorlarimiz
+        </h2>
+        <p className="mt-3 text-[#5E5168]">
+          Dunyo bo‘ylab yetakchi kompaniyalar bilan ishlaymiz
+        </p>
+      </div>
+
+      {/* 1-qator */}
+      <Row direction="left" />
+
+      {/* 2-qator */}
+      <Row direction="right" />
+
+      {/* 3-qator */}
+      <Row direction="left" />
+    </section>
+  );
+};
+
+export default memo(PartnersMarquee);

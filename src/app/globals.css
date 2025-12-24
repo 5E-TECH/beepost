@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+.container,
+.container-lg {
+  max-width: 1300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.container-lg {
+  max-width: 1400px;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marqueeLeft {
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.animate-marqueeRight {
+  animation: marqueeRight 35s linear infinite;
+}
