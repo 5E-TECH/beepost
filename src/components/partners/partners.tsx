@@ -1,13 +1,16 @@
 import { memo } from "react";
 
 const partners = [
+  "YE77I Tech",
   "DHL",
   "FedEx",
+  "Apple",
   "UPS",
   "USPS",
   "Amazon",
   "Alibaba",
   "AliExpress",
+  "YE77I Tech",
   "eBay",
   "Shopify",
   "Stripe",
@@ -47,7 +50,7 @@ const Row = ({
 
 const PartnersMarquee = () => {
   return (
-    <section className="bg-[#FBF8F3] py-24 md:py-1 space-y-10">
+    <section className="bg-gradient-to-b from-white to-[#FBF8F3] py-24 md:py-1 space-y-10">
       <div className="text-center mb-14">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#1E0E2F]">
           Yetkazib berish bo‘yicha hamkorlarimiz

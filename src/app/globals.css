@@ -39,3 +39,7 @@
 .animate-marqueeRight {
   animation: marqueeRight 35s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

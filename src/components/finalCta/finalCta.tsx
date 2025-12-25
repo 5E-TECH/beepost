@@ -2,7 +2,7 @@ import { memo } from "react";
 
 const FinalCta = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#fbf7ef]">
+    <section id="pricing" className="relative min-h-screen overflow-hidden bg-[#fbf7ef]">
       {/* BACKGROUND — matches screenshot layout */}
       <div className="pointer-events-none absolute inset-0">
         {/* base soft warm tint from right */}

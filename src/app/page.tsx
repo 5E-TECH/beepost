@@ -1,3 +1,4 @@
+import About from "@/components/About/about";
 import Faq from "@/components/faq/faq";
 import FinalCta from "@/components/finalCta/finalCta";
 import Header from "@/components/header/header";
@@ -18,6 +19,7 @@ const Page = () => {
 
       {/* Qolgan sectionlar */}
       <Partners />
+      <About/>
       <Qadiryatlar />
       <Proccesflow />
       <Faq />

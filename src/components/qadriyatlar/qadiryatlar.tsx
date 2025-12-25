@@ -3,7 +3,7 @@ import AnimatedCard from "./animatedCard";
 
 const Qadiryatlar = () => {
   return (
-    <section className="bg-[#FBF8F3] py-28">
+    <section id="about" className="bg-[#FBF8F3] py-28">
       <div className="container mx-auto px-4">
         
         {/* Title */}

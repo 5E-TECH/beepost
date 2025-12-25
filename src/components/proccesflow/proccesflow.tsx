@@ -31,7 +31,7 @@ const ProcessFlow = () => {
   };
 
   return (
-    <section className="bg-[#FBF8F3] py-32">
+    <section id="services" className="bg-[#FBF8F3] py-32">
       <div className="container mx-auto px-4 relative overflow-hidden lg:overflow-visible">
         <h2 className="text-center text-4xl font-extrabold mb-6 text-[#1C1C1C]">
           Hiring and networking <br /> that feels human.

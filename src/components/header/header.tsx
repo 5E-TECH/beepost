@@ -2,7 +2,7 @@
 
 import { memo, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/shared/assets/logo.svg";
+// import logo from "@/shared/assets/logo.svg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="h-8 w-8" />
+          <img src="/logo.svg" alt="logo" className="h-8 w-8" />
           <h2 className="font-bold text-2xl">BEEPOST</h2>
         </div>
 
