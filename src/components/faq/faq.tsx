@@ -24,15 +24,13 @@ const Faq = () => {
               <div key={index} className="border-b border-gray-300 pb-4">
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between text-left"
-                >
-                  <span className="text-lg font-medium">{faq.question}</span>
+                  className="flex w-full items-center justify-between text-left">
+                  <span className="text-lg font-medium">{faq.q}</span>
 
                   <span
                     className={`text-2xl transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
-                    }`}
-                  >
+                    }`}>
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
@@ -41,9 +39,8 @@ const Faq = () => {
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     isOpen ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  }`}>
+                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             );
