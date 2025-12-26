@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { headers } from "next/headers";
-import { detectLangFromString, Lang } from "@/lib/language";
+import { Lang } from "@/lib/language";
 import Providers from "./providers";
 
 const geistSans = Geist({
@@ -173,12 +172,7 @@ const metadataByLang: Record<Lang, Metadata> = {
   },
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const hdrs = await headers();
-  const accept = hdrs.get("accept-language");
-  const lang = detectLangFromString(accept);
-  return metadataByLang[lang] ?? metadataByLang.uz;
-}
+export const metadata: Metadata = metadataByLang.uz;
 
 export default function RootLayout({
   children,
