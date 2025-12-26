@@ -2,12 +2,17 @@
 
 import { memo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
 
 const AboutUs = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
+  const { dict } = useI18n();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-[#FBF8F3]">
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-[#FBF8F3] scroll-mt-24"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,9 +37,9 @@ const AboutUs = () => {
             className="text-center mb-8"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              BEEPOST bilan ajoyib
+              {dict.about.titleLine1}
               <br />
-              logistika xizmatlariga ega bo'ling
+              {dict.about.titleLine2}
             </h2>
             
             {/* Trust badges */}
@@ -49,7 +54,7 @@ const AboutUs = () => {
                 <span className="text-2xl">✨</span>
               </div>
               <p className="text-white/90 text-sm md:text-base ml-2">
-                Minglab mijozlar ishonchiga sazovor
+                {dict.about.trust}
               </p>
             </div>
           </motion.div>
@@ -69,7 +74,7 @@ const AboutUs = () => {
                   onClick={() => setIsExpanded(true)}
                   className="group relative inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105"
                 >
-                  Biz haqimizda batafsil
+                  {dict.about.expand}
                   <motion.svg
                     animate={{ x: [0, 5, 0] }}
                     transition={{
@@ -112,12 +117,10 @@ const AboutUs = () => {
                 >
                   <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-3">
                     <span className="text-3xl">🎯</span>
-                    Bizning missiyamiz
+                    {dict.about.missionTitle}
                   </h3>
                   <p className="text-white/80 leading-relaxed text-lg">
-                    BEEPOST - bu O'zbekistondagi eng tez va ishonchli logistika xizmati.
-                    Biz mijozlarimizga yuqori sifatli, xavfsiz va tezkor yetkazib berish
-                    xizmatlarini taqdim etamiz.
+                    {dict.about.mission}
                   </p>
                 </motion.div>
 
@@ -129,25 +132,15 @@ const AboutUs = () => {
                 >
                   <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-3">
                     <span className="text-3xl">💎</span>
-                    Nima uchun biz?
+                    {dict.about.whyTitle}
                   </h3>
                   <ul className="space-y-3 text-white/80 text-lg">
-                    <li className="flex items-start gap-3">
-                      <span className="text-yellow-400 text-xl mt-1">✓</span>
-                      <span>24/7 mijozlarni qo'llab-quvvatlash xizmati</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-yellow-400 text-xl mt-1">✓</span>
-                      <span>Real vaqt rejimida buyurtmalarni kuzatish</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-yellow-400 text-xl mt-1">✓</span>
-                      <span>O'zbekiston bo'ylab eng keng tarmoq</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-yellow-400 text-xl mt-1">✓</span>
-                      <span>Hamyonbop narxlar va chegirmalar</span>
-                    </li>
+                    {dict.about.reasons.map((reason, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="text-yellow-400 text-xl mt-1">✓</span>
+                        <span>{reason}</span>
+                      </li>
+                    ))}
                   </ul>
                 </motion.div>
 
@@ -159,21 +152,17 @@ const AboutUs = () => {
                 >
                   <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-3">
                     <span className="text-3xl">📊</span>
-                    Bizning yutuqlarimiz
+                    {dict.about.achievementsTitle}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-yellow-400 mb-2">50K+</div>
-                      <div className="text-white/70">Yetkazilgan buyurtmalar</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-purple-400 mb-2">1000+</div>
-                      <div className="text-white/70">Faol mijozlar</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-pink-400 mb-2">99.8%</div>
-                      <div className="text-white/70">Muvaffaqiyat ko'rsatkichi</div>
-                    </div>
+                    {dict.about.achievements.map((item, idx) => (
+                      <div key={idx} className="text-center">
+                        <div className="text-4xl font-bold text-yellow-400 mb-2">
+                          {item.value}
+                        </div>
+                        <div className="text-white/70">{item.label}</div>
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
 
@@ -188,7 +177,7 @@ const AboutUs = () => {
                     onClick={() => setIsExpanded(false)}
                     className="group inline-flex items-center gap-3 text-white/90 hover:text-white px-6 py-3 rounded-xl border-2 border-white/20 hover:border-white/40 transition-all duration-300"
                   >
-                    Yig'ish
+                    {dict.about.collapse}
                     <motion.svg
                       animate={{ y: [0, -3, 0] }}
                       transition={{

@@ -3,8 +3,10 @@
 import { memo } from "react";
 import HeroAnimation from "./HeroAnimation";
 import HeroButtons from "./HeroButtons";
+import { useI18n } from "@/lib/i18n";
 
 const Hero = () => {
+  const { dict } = useI18n();
   return (
     <section className="relative h-screen overflow-hidden flex items-center bg-gradient-to-b from-purple-50/30 to-white">
       {/* Left side - Illustration - Positioned Lower */}
@@ -67,32 +69,43 @@ const Hero = () => {
       <div className="relative z-20 mx-auto max-w-4xl px-6 py-32 text-center">
         <HeroAnimation>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1E0E2F] md:text-6xl lg:text-6xl xl:text-7xl leading-tight">
-            Ishonchli va tezkor <br />
+            {dict.hero.title1} <br />
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              yetkazib berish xizmati
+              {dict.hero.titleHighlight}
             </span>
           </h1>
 
           <p className="mx-auto mt-6 lg:mt-8 max-w-2xl text-lg sm:text-xl text-[#5E5168] leading-relaxed">
-            O'zbekiston bo'ylab posilkalaringizni xavfsiz va tez yetkazib beramiz.
-            Real vaqt rejimida kuzatish, qulay narxlar va 24/7 qo'llab-quvvatlash.
+            {dict.hero.description}
           </p>
 
           {/* Stats */}
           <div className="mt-8 lg:mt-12 flex justify-center gap-6 lg:gap-8 flex-wrap">
             <div className="text-center">
-              <div className="text-2xl lg:text-3xl font-bold text-purple-600">50K+</div>
-              <div className="text-xs lg:text-sm text-gray-600 mt-1">Yetkazilgan</div>
+              <div className="text-2xl lg:text-3xl font-bold text-purple-600">
+                {dict.hero.stats[0].value}
+              </div>
+              <div className="text-xs lg:text-sm text-gray-600 mt-1">
+                {dict.hero.stats[0].label}
+              </div>
             </div>
             <div className="w-px h-10 lg:h-12 bg-gray-300" />
             <div className="text-center">
-              <div className="text-2xl lg:text-3xl font-bold text-pink-600">99.8%</div>
-              <div className="text-xs lg:text-sm text-gray-600 mt-1">Muvaffaqiyat</div>
+              <div className="text-2xl lg:text-3xl font-bold text-pink-600">
+                {dict.hero.stats[1].value}
+              </div>
+              <div className="text-xs lg:text-sm text-gray-600 mt-1">
+                {dict.hero.stats[1].label}
+              </div>
             </div>
             <div className="w-px h-10 lg:h-12 bg-gray-300" />
             <div className="text-center">
-              <div className="text-2xl lg:text-3xl font-bold text-yellow-600">24/7</div>
-              <div className="text-xs lg:text-sm text-gray-600 mt-1">Qo'llab-quvvatlash</div>
+              <div className="text-2xl lg:text-3xl font-bold text-yellow-600">
+                {dict.hero.stats[2].value}
+              </div>
+              <div className="text-xs lg:text-sm text-gray-600 mt-1">
+                {dict.hero.stats[2].label}
+              </div>
             </div>
           </div>
 
