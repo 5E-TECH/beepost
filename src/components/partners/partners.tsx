@@ -1,4 +1,7 @@
+"use client";
+
 import { memo } from "react";
+import { useI18n } from "@/lib/i18n";
 
 const partners = [
   "YE77I Tech",
@@ -49,14 +52,15 @@ const Row = ({
 };
 
 const PartnersMarquee = () => {
+  const { dict } = useI18n();
   return (
     <section className="bg-gradient-to-b from-white to-[#FBF8F3] py-24 md:py-1 space-y-10">
       <div className="text-center mb-14">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#1E0E2F]">
-          Yetkazib berish bo‘yicha hamkorlarimiz
+          {dict.partners.title}
         </h2>
         <p className="mt-3 text-[#5E5168]">
-          Dunyo bo‘ylab yetakchi kompaniyalar bilan ishlaymiz
+          {dict.partners.subtitle}
         </p>
       </div>
 

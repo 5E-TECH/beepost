@@ -2,11 +2,14 @@
 
 import { memo, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
+import LanguageSwitcher from "../LanguageSwitcher";
 // import logo from "@/shared/assets/logo.svg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { dict } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -33,20 +36,27 @@ const Header = () => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 text-gray-800 font-medium">
           <a href="#about" className="hover:text-purple-600 transition">
-            Biz haqimizda
+            {dict.nav.about}
+          </a>
+          <a href="#values" className="hover:text-purple-600 transition">
+            {dict.nav.values}
           </a>
           <a href="#services" className="hover:text-purple-600 transition">
-            Xizmatlar
+            {dict.nav.services}
+          </a>
+          <a href="#faq" className="hover:text-purple-600 transition">
+            {dict.nav.faq}
           </a>
           <a href="#pricing" className="hover:text-purple-600 transition">
-            Narxlar
+            {dict.nav.pricing}
           </a>
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitcher />
           <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
-            Tizimga kirish
+            {dict.nav.cta}
           </button>
         </div>
 
@@ -94,23 +104,39 @@ const Header = () => {
               href="#about"
               className="text-gray-800 font-medium hover:text-purple-600 transition"
             >
-              Biz haqimizda
+              {dict.nav.about}
+            </a>
+            <a
+              href="#values"
+              className="text-gray-800 font-medium hover:text-purple-600 transition"
+            >
+              {dict.nav.values}
             </a>
             <a
               href="#services"
               className="text-gray-800 font-medium hover:text-purple-600 transition"
             >
-              Xizmatlar
+              {dict.nav.services}
+            </a>
+            <a
+              href="#faq"
+              className="text-gray-800 font-medium hover:text-purple-600 transition"
+            >
+              {dict.nav.faq}
             </a>
             <a
               href="#pricing"
               className="text-gray-800 font-medium hover:text-purple-600 transition"
             >
-              Narxlar
+              {dict.nav.pricing}
             </a>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition mt-2">
-              Tizimga kirish
-            </button>
+            <a
+              href="#pricing"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition mt-2 text-center"
+            >
+              {dict.nav.cta}
+            </a>
+            <LanguageSwitcher />
           </motion.nav>
         )}
       </AnimatePresence>

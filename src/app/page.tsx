@@ -6,6 +6,7 @@ import Hero from "@/components/hero/hero";
 import Partners from "@/components/partners/partners";
 import Proccesflow from "@/components/proccesflow/proccesflow";
 import Qadiryatlar from "@/components/qadriyatlar/qadiryatlar";
+import Footer from "@/components/footer/footer";
 import { memo } from "react";
 
 const Page = () => {
@@ -23,7 +24,8 @@ const Page = () => {
       <Qadiryatlar />
       <Proccesflow />
       <Faq />
-      <FinalCta /> 
+      <FinalCta />
+      <Footer />
     </div>
   );
 };

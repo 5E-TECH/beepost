@@ -1,39 +1,23 @@
 "use client";
 
 import { memo, useState } from "react";
-
-const faqs = [
-  {
-    question: "What is Liftoff?",
-    answer:
-      "Liftoff is a hiring and networking platform that helps you find an incredible fit through people you trust.",
-  },
-  {
-    question: "Who uses Liftoff?",
-    answer:
-      "Liftoff users are people in tech startups who are hiring, connecting others, or job-seeking.",
-  },
-  {
-    question: "I know someone who's hiring. How can I help them?",
-    answer:
-      "You can share the role with your network and help make trusted connections.",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { dict } = useI18n();
 
   return (
-    <section className="bg-[#fbf7ef] py-20">
+    <section id="faq" className="bg-[#fbf7ef] py-20 scroll-mt-24">
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left */}
         <h2 className="text-4xl font-semibold max-md:text-2xl">
-          Frequently <br className="hidden md:block" /> asked questions
+          {dict.faq.title} <br className="hidden md:block" />
         </h2>
 
         {/* Right */}
         <div className="space-y-6">
-          {faqs.map((faq, index) => {
+          {dict.faq.items.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
