@@ -95,7 +95,7 @@ export const dictionaries: Record<
       services: "Jarayon",
       faq: "Savollar",
       pricing: "Narxlar",
-      cta: "Buyurtma berish",
+      cta: "Tizimga kirish",
     },
     hero: {
       title1: "Ishonchli va tezkor",
@@ -268,7 +268,7 @@ export const dictionaries: Record<
       services: "Process",
       faq: "FAQ",
       pricing: "Pricing",
-      cta: "Order now",
+      cta: "Login",
     },
     hero: {
       title1: "Reliable, fast",
@@ -441,7 +441,7 @@ export const dictionaries: Record<
       services: "Процесс",
       faq: "FAQ",
       pricing: "Тарифы",
-      cta: "Оформить",
+      cta: "Вход",
     },
     hero: {
       title1: "Надёжная и быстрая",

@@ -24,8 +24,7 @@ const Header = () => {
         ${
           scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
         }
-      `}
-    >
+      `}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -55,17 +54,18 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+          <a
+            href="https://beepost.uz/admin"
+            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
             {dict.nav.cta}
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="focus:outline-none"
-          >
+            className="focus:outline-none">
             <span
               className="block w-6 h-0.5 bg-gray-800 mb-1 transition-transform duration-300"
               style={{
@@ -98,42 +98,35 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="md:hidden bg-white/95 backdrop-blur-md shadow-md w-full absolute top-16 left-0 px-4 py-6 flex flex-col gap-4"
-          >
+            className="md:hidden bg-white/95 backdrop-blur-md shadow-md w-full absolute top-16 left-0 px-4 py-6 flex flex-col gap-4">
             <a
               href="#about"
-              className="text-gray-800 font-medium hover:text-purple-600 transition"
-            >
+              className="text-gray-800 font-medium hover:text-purple-600 transition">
               {dict.nav.about}
             </a>
             <a
               href="#values"
-              className="text-gray-800 font-medium hover:text-purple-600 transition"
-            >
+              className="text-gray-800 font-medium hover:text-purple-600 transition">
               {dict.nav.values}
             </a>
             <a
               href="#services"
-              className="text-gray-800 font-medium hover:text-purple-600 transition"
-            >
+              className="text-gray-800 font-medium hover:text-purple-600 transition">
               {dict.nav.services}
             </a>
             <a
               href="#faq"
-              className="text-gray-800 font-medium hover:text-purple-600 transition"
-            >
+              className="text-gray-800 font-medium hover:text-purple-600 transition">
               {dict.nav.faq}
             </a>
             <a
               href="#pricing"
-              className="text-gray-800 font-medium hover:text-purple-600 transition"
-            >
+              className="text-gray-800 font-medium hover:text-purple-600 transition">
               {dict.nav.pricing}
             </a>
             <a
-              href="#pricing"
-              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition mt-2 text-center"
-            >
+              href="https://beepost.uz/admin"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition mt-2 text-center">
               {dict.nav.cta}
             </a>
             <LanguageSwitcher />
